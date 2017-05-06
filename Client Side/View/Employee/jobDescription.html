@@ -1,0 +1,96 @@
+﻿<section class="wrapper">
+    <h3><i class="fa fa-angle-right"></i> Job Description</h3>
+    
+    <div class="row">
+        <div class="col-lg-2"><button class="btn btn-success" ng-disabled="account.keyAccountabilities!=null" ng-click="addDescription()"><i class="fa fa-plus-square-o" aria-hidden="true"></i> Add Job Description</button></div>
+        <div class="col-lg-2"><button class="btn btn-primary" ng-disabled="account.isHOBUConfirmed" ng-click="updateDescription()"><i class="fa fa-pencil-square-o"></i> Update Description</button></div>
+        <div class="col-lg-2"><button class="btn btn-info" ng-disabled="buttonHandle" ng-click="printJobDes(account)"><i class="fa fa-print" aria-hidden="true"></i> Print Job Description</button></div>
+        <div class="col-lg-2"><button class="btn btn-warning" ng-disabled="buttonHandle" ng-click="downloadJobDes(account)"><i class="fa fa-download" aria-hidden="true"></i> Download Job Description</button></div>
+        
+    </div>
+    <br />
+
+    <div>
+        <form>
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="form-group">
+                        <label for="employeeID">Employee ID:</label>
+                        <input type="text" class="form-control" id="employeeID" ng-model="account.employeeId" disabled/>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-group">
+                        <label for="employeeName">Name:</label>
+                        <input type="text" class="form-control" id="employeeName" ng-model="account.employeeName" disabled/>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3">
+                    <div class="form-group">
+                        <label for="joinDate">Joining Date:</label>
+                        <input type="text" class="form-control" id="joinDate" uib-datepicker-popup="dd/MM/yyyy" ng-model="account.joiningDate" disabled/>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="form-group">
+                        <label for="position">Position:</label>
+                        <input type="text" class="form-control" ng-model="account.designation" disabled/>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-group">
+                        <label for="department">Department:</label>
+                        <input type="text" class="form-control" ng-model="account.department" disabled/>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-group">
+                        <label for="section">Section:</label>
+                        <input type="text" class="form-control" ng-model="account.section" disabled/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="form-group">
+                        <label for="reportTo">Reports to:</label>
+                        <input type="text" class="form-control" ng-model="account.reportToName" disabled/>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-group">
+                        <label for="location">Location:</label>
+                        <input id="location" class="form-control" ng-model="account.location" type="text" disabled/>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-group">
+                        <label for="location">Email:</label>
+                        <input class="form-control" type="text" ng-model="account.email" disabled/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-9">
+                    <div class="form-group">
+                        <label for="jobPurpose">Job Purpose:</label>
+                        <textarea id="jobPurpose" class="form-control" rows="5" ng-model="account.jobPurpose" readonly></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-9">
+                    <div class="form-group">
+                        <label for="jobKey">Key Accountabilities:</label>
+                        <textarea id="jobKey" class="form-control" rows="5" ng-model="account.keyAccountabilities" readonly></textarea>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

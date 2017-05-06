@@ -1,0 +1,38 @@
+﻿[
+  {
+    "id": 1,
+    "label": "EmployeeId"
+  },
+  {
+    "id": 2,
+    "label": "EmployeeName"
+  },
+  {
+    "id": 3,
+    "label": "Designation"
+  },
+  {
+    "id": 5,
+    "label": "Section"
+  },
+  {
+    "id": 6,
+    "label": "Email"
+  },
+  {
+    "id": 7,
+    "label": "ReportTo"
+  },
+  {
+    "id": 8,
+    "label": "Overall Score"
+  },
+  {
+    "id": 11,
+    "label": "Total Score"
+  },
+  {
+    "id": 12,
+    "label": "Status"
+  }
+]

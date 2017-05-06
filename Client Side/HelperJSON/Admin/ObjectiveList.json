@@ -1,0 +1,54 @@
+﻿[
+  {
+    "id": 1,
+    "value": "Employee Id"
+  },
+  {
+    "id": 2,
+    "value": "Employee Name"
+  },
+  {
+    "id": 3,
+    "value": "Designation"
+  },
+  {
+    "id": 4,
+    "value": "Department"
+  },
+  {
+    "id": 4,
+    "value": "Section"
+  },
+  {
+    "id": 6,
+    "value": "Report To"
+  },
+  {
+    "id": 7,
+    "value": "Title"
+  },
+  {
+    "id": 8,
+    "value": "KPI"
+  },
+  {
+    "id": 9,
+    "value": "Target"
+  },
+  {
+    "id": 10,
+    "value": "Self Appraisal"
+  },
+  {
+    "id": 11,
+    "value": "Performance Appraisal"
+  },
+  {
+    "id": 12,
+    "value": "Evidence File"
+  },
+    {
+    "id": 13,
+    "value": "Status"
+  }
+]

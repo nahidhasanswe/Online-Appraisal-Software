@@ -1,0 +1,78 @@
+﻿<section class="wrapper" ng-controller="jobObjectiveController">
+    <h3><i class="fa fa-angle-right"></i> Job Objectives</h3>
+
+    <div class="row">
+        <div class="col-lg-2"><button class="btn btn-success" ng-click="addObjective()"><i class="fa fa-plus"></i> Add Objectives</button></div>
+    </div>
+    <br />
+    <div class="content-panel">
+        <h4><i class="fa fa-angle-right"></i> Your Objectives</h4>
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="form-group">
+                    <div class="input-group" style="margin-left:10px; margin-right:10px">
+                        <span class="input-group-addon" id="basic-addon1">Group By</span>
+                        <select class="form-control" ng-model="selectGroup"  ng-options="o.label for o in GroupBy">
+                            <option value="">All</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="form-group">
+                    <div class="input-group" style="margin-left:10px; margin-right:10px">
+                        <span class="input-group-addon" id="basic-addon1"><i class="fa fa-list" aria-hidden="true"></i></span>
+                        <div ng-dropdown-multiselect="" events="changeEvents" extra-settings="dropConfig"
+                             options="ColumnList" selected-model="SelectedColumn"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="pull-right" style="margin-right:50px !important">
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown"><i class="fa fa-download"></i> Download <i class="fa fa-caret-down" aria-hidden="true"></i></button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                            <li role="presentation"><a role="menuitem" tabindex="-1" onclick="$('#ObjectiveList').tableExport({ type: 'excel', pdfFontSize: 12, escape: 'false', fileName: 'MyObjectives' });" href=""><i class="fa fa-table" aria-hidden="true"></i> Table Data</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="" ng-click="GenerateExcel(Objectives)"><i class="fa fa-list" aria-hidden="true"></i> All Data</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section id="unseen">
+            <table id="ObjectiveList" class="table table-bordered table-striped table-condensed">
+                <thead>
+                    <tr>
+                        <th ng-if="selectCol.Code">Code</th>
+                        <th ng-if="selectCol.Title">Title</th>
+                        <th ng-if="selectCol.KPI">KPI</th>
+                        <th ng-if="selectCol.Target">Target</th>
+                        <th ng-if="selectCol.Weight">Weight</th>
+                        <th ng-if="selectCol.Note">Note</th>
+                        <th ng-if="selectCol.Status">Status</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="objective in Objectives|filter:{isObjectApprove:selectGroup.value}:strict">
+                        <td ng-if="selectCol.Code">{{objective.objectiveId}}</td>
+                        <td ng-if="selectCol.Title">{{objective.title}}</td>
+                        <td ng-if="selectCol.KPI">{{objective.kpi}}</td>
+                        <td ng-if="selectCol.Target">{{objective.target}}</td>
+                        <td ng-if="selectCol.Weight">{{objective.weight}}</td>
+                        <td ng-if="selectCol.Note">{{objective.note}}</td>
+                        <td ng-if="selectCol.Status">
+                            <span ng-if="!objective.isObjectApprove" class="label label-danger label-mini">Pending</span>
+                            <span ng-if="objective.isObjectApprove" class="label label-success label-mini">Approve</span>
+                        </td>
+                        <td>
+                            <button class="btn btn-success btn-xs" ng-click="viewObjective(objective)"><i class="fa fa-eye"></i></button>
+                            <button ng-if="!objective.isObjectApprove" class="btn btn-primary btn-xs" ng-click="updateObjective(objective)"><i class="fa fa-pencil"></i></button>
+                        </td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+</section>

@@ -1,0 +1,34 @@
+﻿[
+  {
+    "id": 1,
+    "label": "Employee Id"
+  },
+  {
+    "id": 2,
+    "label": "Employee Name"
+  },
+  {
+    "id": 3,
+    "label": "Designation"
+  },
+  {
+    "id": 5,
+    "label": "Section"
+  },
+  {
+    "id": 6,
+    "label": "Email"
+  },
+  {
+    "id": 7,
+    "label": "Joining Date"
+  },
+  {
+    "id": 10,
+    "label": "Report To"
+  },
+  {
+    "id": 12,
+    "label": "Status"
+  }
+]

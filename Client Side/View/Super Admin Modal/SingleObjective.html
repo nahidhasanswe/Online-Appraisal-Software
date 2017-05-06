@@ -1,0 +1,121 @@
+﻿<div tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div ng-controller="objectiveListsController">
+        <form>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" ng-click="$dismiss()" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">{{objective.title}}</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="form-group">
+                                <label for="employeeId" class="text-bold text-primary">Employee Id:</label>
+                                <label id="employeeId"><span class="text-style">1004</span></label>
+                            </div>
+                        </div>
+                        <div class="col-lg-5">
+                            <div class="form-group">
+                                <label for="Name" class="text-bold text-primary">Employee Name:</label>
+                                <label id="Name"><span class="text-style">Md. Nazmul Haque</span></label>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                <label for="joinDate" class="text-bold text-primary">Join Date:</label>
+                                <label id="joinDate"><span class="text-style">16/02/2017</span></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="form-group">
+                                <label for="position" class="text-bold text-primary">Postition:</label>
+                                <label id="position"><span class="text-style">Senior Manager</span></label>
+                            </div>
+                        </div>
+                        <div class="col-lg-5">
+                            <div class="form-group">
+                                <label for="department" class="text-bold text-primary">Department:</label>
+                                <label id="department"><span class="text-style">Human Resource</span></label>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                <label for="section" class="text-bold text-primary">Section:</label>
+                                <label id="section"><span class="text-style">Admin</span></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="form-group">
+                                <label for="position" class="text-bold text-primary">Reports To:</label>
+                                <label id="position"><span class="text-style">Belal Ahmed</span></label>
+                            </div>
+                        </div>
+                        <div class="col-lg-5">
+                            <div class="form-group">
+                                <label for="department" class="text-bold text-primary">Submission Date:</label>
+                                <label id="department"><span class="text-style">16/02/2017</span></label>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                <label for="section" class="text-bold text-primary">Self Appraisal Score:</label>
+                                <label id="section"><span class="text-style"></span></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label for="kpi" class="text-bold text-primary">Key Performace Indicators:</label>
+                                <div id="kpi" class="text-normal">{{objective.userId}}</div>
+                                <div></div>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label for="target" class="text-bold text-primary">Target:</label>
+                                <div id="target" class="text-normal">{{objective.id}}</div>
+                                <div></div>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label for="Weight" class="text-bold text-primary">Weight:</label>
+                                <div id="Weight" class="text-normal">{{objective.title}}</div>
+                                <div></div>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label for="note" class="text-bold text-primary">Note:</label>
+                                <div id="note" class="text-normal">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English</div>
+                                <div></div>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label for="note" class="text-bold text-primary">Comments:</label>
+                                <div id="note" class="text-normal">It is a long established fact that a reader will</div>
+                                <div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer" ng-controller="objectiveListsController">
+                    <button type="button" class="btn btn-default" ng-click="$dismiss()"><i class="fa fa-times" aria-hidden="true"></i> Close</button>
+                    <button type="button" class="btn btn-primary" ng-click=""><i class="fa fa-plus" aria-hidden="true"></i> Save</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+

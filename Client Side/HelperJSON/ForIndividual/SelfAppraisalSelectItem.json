@@ -1,0 +1,27 @@
+﻿[
+  {
+    "id": 1,
+    "value": "Code"
+  },
+  {
+    "id": 2,
+    "value": "Title"
+  },
+  {
+    "id": 3,
+    "value": "KPI"
+  },
+  {
+    "id": 6,
+    "value": "Note"
+  },
+  {
+    "id": 7,
+    "value": "SelfAppraisal"
+  },
+  {
+    "id": 9,
+    "value": "EvidenceFile"
+  }
+]
+

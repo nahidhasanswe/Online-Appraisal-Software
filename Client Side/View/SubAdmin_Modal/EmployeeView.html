@@ -1,0 +1,85 @@
+﻿<div tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" ng-click="$dismiss()" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">{{Info.employeeName}}</h4>
+            </div>
+            <div id="printDiv" class="modal-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="row">
+                            <div class="col-lg-12"><label class="text-bold text-primary">Employee Information:</label></div>
+                            <div class="col-lg-3 style-bold"><b>Id: </b></div>
+                            <div class="col-lg-9 style-text">{{Info.employeeId}}</div>
+                            <div class="col-lg-3 style-bold"><b>Name: </b></div>
+                            <div class="col-lg-9 style-text">{{Info.employeeName}}</div>
+                            <div class="col-lg-3 style-bold"><b>Email: </b></div>
+                            <div class="col-lg-9 style-text">{{Info.email}}</div>
+                            <div class="col-lg-3 style-bold"><b>Status: </b></div>
+                            <div ng-if="Info.isHOBUConfirmed" class="col-lg-9 style-text">Approve</div>
+                            <div ng-if="!Info.isHOBUConfirmed" class="col-lg-9 style-text">Pending</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <label class="text-bold text-primary">Job Information:</label>
+                            </div>
+                            <div class="col-lg-3 style-bold"><b>Designation: </b></div>
+                            <div class="col-lg-8 style-text">{{Info.designation}}</div>
+                            <div class="col-lg-3 style-bold"><b>Department: </b></div>
+                            <div class="col-lg-8 style-text">{{Info.department}}</div>
+                            <div class="col-lg-3 style-bold"><b>Section: </b></div>
+                            <div class="col-lg-8 style-text">{{Info.section}}</div>
+                            <div class="col-lg-3 style-bold"><b>Join Date: </b></div>
+                            <div class="col-lg-8 style-text">{{Info.joiningDate|date:'dd/MM/yyyy'}}</div>
+                            <div class="col-lg-3 style-bold"><b>Location: </b></div>
+                            <div class="col-lg-8 style-text">{{Info.location}}</div>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <label class="text-bold text-primary">Reports To:</label>
+                            </div>
+                            <div class="col-lg-3 style-bold"><b>Name: </b></div>
+                            <div class="col-lg-8 style-text">{{Info.reportToName}}</div>
+                            <div class="col-lg-3 style-bold"><b>Designation: </b></div>
+                            <div class="col-lg-8 style-text">{{Info.reportToDesignation}}</div>
+                            <div class="col-lg-3 style-bold"><b>Department: </b></div>
+                            <div class="col-lg-8 style-text">{{Info.reportToDepartment}}</div>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="form-group">
+                        <div class="col-lg-12">
+                            <label for="jobpurpose" class="text-bold text-primary">Job Purpose</label>
+                            <div id="jobpurpose" class="style-text">{{Info.jobPurpose}}</div>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="form-group">
+                        <div class="col-lg-12">
+                            <label for="key" class="text-bold text-primary">Key Accountabilities</label>
+                            <div id="key" class="style-text">{{Info.keyAccountabilities}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning" ng-click="ReportDownload(Info)"><i class="fa fa-download"></i> Download</button>
+                <button type="button" class="btn btn-info" ng-click="ReportPrint(Info)"><i class="fa fa-print"></i> Print</button>
+                <button type="button" class="btn btn-default" ng-click="$dismiss()"><i class="fa fa-times" aria-hidden="true"></i> Close</button>
+                <button ng-if="!Info.Status" type="button" class="btn btn-primary" ng-click="ApproveJobDescription(Info.employeeId)"><i class="fa fa-check" aria-hidden="true"></i> Approve</button>
+            </div>
+        </div>
+    </div>
+</div>

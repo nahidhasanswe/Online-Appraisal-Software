@@ -1,0 +1,108 @@
+﻿<section class="wrapper" ng-init="ViewEmployeeByParams()">
+    <h3><i class="fa fa-angle-right"></i> Employee List List</h3>
+    <br />
+    <form>
+        <div class="content-panel">
+            <h4><i class="fa fa-angle-right"></i> All Employee List</h4>
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="form-group">
+                        <div class="input-group" style="margin-left:10px; margin-right:10px">
+                            <span class="input-group-addon" id="basic-addon1"><i class="fa fa-search" aria-hidden="true"></i></span>
+                            <input type="text" ng-model="filter" class="form-control" placeholder="Search" aria-describedby="basic-addon1">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="form-group">
+                        <div class="input-group" style="margin-left:10px; margin-right:10px">
+                            <span class="input-group-addon" id="basic-addon1"><i class="fa fa-list-ol" aria-hidden="true"></i></span>
+                            <select class="form-control" ng-model="selectItem" ng-change="setitemsPerPage(selectItem)" ng-options="o.value for o in ViewItems"></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="form-group">
+                        <div class="input-group" style="margin-left:10px; margin-right:10px">
+                            <span class="input-group-addon" id="basic-addon1"><i class="fa fa-list" aria-hidden="true"></i></span>
+                            <div ng-dropdown-multiselect="" events="changeEvents" extra-settings="dropConfig"
+                                 options="ColumnList" selected-model="SelectedColumn"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="form-group">
+                        <div class="input-group" style="margin-left:10px; margin-right:10px">
+                            <span class="input-group-addon" id="basic-addon1"><i class="fa fa-adjust" aria-hidden="true"></i></span>
+                            <select class="form-control" ng-model="Selected" ng-change="" ng-options="o.label for o in StatusBy">
+                                <option value="">All</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="pull-right" style="margin-right:50px !important">
+                        <div class="dropdown">
+                            <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown"><i class="fa fa-download"></i> Download <i class="fa fa-caret-down" aria-hidden="true"></i></button>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                                <li role="presentation"><a role="menuitem" tabindex="-1" onclick="$('#EmployeeList').tableExport({ type: 'excel', pdfFontSize: 12, escape: 'false', fileName: 'Employee List' });" href=""><i class="fa fa-table" aria-hidden="true"></i> Table Data</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="" ng-click="GenerateEmployeeExcel(Employees)"><i class="fa fa-list" aria-hidden="true"></i> All Data</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <section id="unseen">
+                <table id="EmployeeList" class="table table-bordered table-striped table-condensed">
+                    <thead>
+                        <tr>
+                            <th ng-if="selectCol.EmployeeId">Employee Id</th>
+                            <th ng-if="selectCol.EmployeeName">Employee Name</th>
+                            <th ng-if="selectCol.Designation">Designation</th>
+                            <th ng-if="selectCol.Department">Department</th>
+                            <th ng-if="selectCol.Section">Section</th>
+                            <th ng-if="selectCol.Email">Email</th>
+                            <th ng-if="selectCol.JoiningDate">Joinig Date</th>
+                            <th ng-if="selectCol.ReportTo">Report To</th>
+                            <th ng-if="selectCol.Location">Location</th>
+                            <th ng-if="selectCol.JobPurpose">Job Purpose</th>
+                            <th ng-if="selectCol.KeyAccountabilities">Key Accountabilities</th>
+                            <th ng-if="selectCol.Status">Status</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr dir-paginate="info in Employees|filter:{isHOBUConfirmed:Selected.value,$:filter}:strict|itemsPerPage:ViewPerPage">
+                            <td ng-if="selectCol.EmployeeId">{{info.employeeId}}</td>
+                            <td ng-if="selectCol.EmployeeName">{{info.employeeName}}</td>
+                            <td ng-if="selectCol.Designation">{{info.designation}}</td>
+                            <td ng-if="selectCol.Department">{{info.department}}</td>
+                            <td ng-if="selectCol.Section">{{info.section}}</td>
+                            <td ng-if="selectCol.Email">{{info.email}}</td>
+                            <td ng-if="selectCol.JoiningDate">{{info.joiningDate|date:'dd/MM/yyyy'}}</td>
+                            <td ng-if="selectCol.ReportTo">{{info.reportToName}}</td>
+                            <td ng-if="selectCol.Location">{{info.location}}</td>
+                            <td ng-if="selectCol.JobPurpose">{{info.jobPurpose}}</td>
+                            <td ng-if="selectCol.KeyAccountabilities">{{info.keyAccountabilities}}</td>
+                            <td ng-if="selectCol.Status">
+                                <span ng-if="!info.isHOBUConfirmed" class="label label-danger label-mini">Pending</span>
+                                <span ng-if="info.isHOBUConfirmed" class="label label-info label-mini">Approve</span>
+                            </td>
+                            <td>
+                                <button class="btn btn-success btn-xs" ng-click="viewEmployee(info)">View</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div style="margin-left:5px; vertical-align:middle">
+                    <dir-pagination-controls max-size="10"
+                                             direction-links="true"
+                                             boundary-links="true">
+                    </dir-pagination-controls>
+                </div>
+            </section>
+        </div>
+    </form>
+
+</section>

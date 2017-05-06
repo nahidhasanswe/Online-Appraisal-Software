@@ -1,0 +1,22 @@
+﻿[
+  {
+    "id": 2,
+    "label": "Employee Name"
+  },
+  {
+    "id": 4,
+    "label": "Title"
+  },
+  {
+    "id": 5,
+    "label": "KPI"
+  },
+  {
+    "id": 6,
+    "label": "Target"
+  },
+  {
+    "id": 9,
+    "label": "Status"
+  }
+]

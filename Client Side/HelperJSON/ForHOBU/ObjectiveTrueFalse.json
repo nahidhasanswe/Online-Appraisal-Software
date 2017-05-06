@@ -1,0 +1,15 @@
+﻿{
+  "EmployeeId": true,
+  "EmployeeName": true,
+  "Code": false,
+  "Title": true,
+  "Weight": false,
+  "Status": false,
+  "KPI": true,
+  "Target": true,
+  "Note": false,
+  "SelfAppraisal": true,
+  "Comments": false,
+  "EvidenceFile": true,
+  "PerformanceAppraisal": true
+}

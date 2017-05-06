@@ -1,0 +1,46 @@
+﻿[
+  {
+    "id": 1,
+    "Designation": "Accounts Asst"
+  },
+  {
+    "id": 2,
+    "Designation": "Accounts Officer"
+  },
+  {
+    "id": 3,
+    "Designation": "AGM"
+  },
+  {
+    "id": 4,
+    "Designation": "Assistant Manager"
+  },
+  {
+    "id": 5,
+    "Designation": "Asst. Marchandiser"
+  },
+  {
+    "id": 6,
+    "Designation": "Audit Officer"
+  },
+  {
+    "id": 7,
+    "Designation": "C.E.O"
+  },
+  {
+    "id": 8,
+    "Designation": "C.F.O"
+  },
+  {
+    "id": 9,
+    "Designation": "C.O.O"
+  },
+  {
+    "id": 10,
+    "Designation": "Commercial Officer"
+  },
+  {
+    "id": 11,
+    "Designation": "Consultant"
+  }
+]

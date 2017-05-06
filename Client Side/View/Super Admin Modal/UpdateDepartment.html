@@ -1,0 +1,29 @@
+﻿<div tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" ng-click="$dismiss()" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Update- {{objDepartment.department}}</h4>
+            </div>
+            <form name="DeptData" ng-submit="UpdatingDepartment(DeptData.$invalid)" novalidate>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label for="section" class="text-bold text-primary">Department</label>
+                                <input id="section" name="Dep" class="form-control" ng-model="objDepartment.department" required/>
+                                <div ng-messages="DeptData.Dep.$error" ng-if="DeptData.$submitted" class="text-danger">
+                                    <div ng-message="required">Department Name is required</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" ng-click="$dismiss()"><i class="fa fa-times" aria-hidden="true"></i> Close</button>
+                    <button type="submit" ng-disabled="isProcess" class="btn btn-primary"><i class="fa fa-pencil" aria-hidden="true"></i> {{DepartmentUpdate}}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,115 @@
+﻿<div tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" ng-click="$dismiss()" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Add Peformance Appraisal- {{info.employeeId}} {{info.employeeName}}</h4>
+            </div>
+            <div class="modal-body">
+                <h4 style="color:black">Self Appraisal Information</h4>
+                <hr class="border-line" />
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label for="overallScore" class="style-bold-16 text-primary">Overall SelfAppraisal: </label>
+                            <label id="overallScore" class="style-text-16">{{info.overallScore}}</label>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label for="overallComments" class="style-bold-16 text-primary">Comments: </label>
+                            <label id="overallComments" class="style-text-16">{{info.overallComments}}</label>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label for="pdp" class="style-bold-16 text-primary">Personal Development Plan: </label>
+                            <label id="pdp" class="style-text-16">{{info.pdp}}</label>
+                        </div>
+                    </div>
+                </div>
+                <h4 style="color:black">Performance Appraisal Information</h4>
+                <div ng-repeat="objective in Objectives">
+                    <hr class="border-line" />
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <div class="form-group">
+                                <label for="id" class="style-bold-16 text-primary">Objective: </label>
+                                <label id="id" class="style-text-16">{{$index+1}}</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-10">
+                            <div class="form-group">
+                                <label for="Title" class="style-bold-16 text-primary">Objective Title: </label>
+                                <label id="Title" class="style-text-16">{{objective.title}}</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label for="kpi" class="style-bold-16 text-primary">KPI: </label>
+                                <label id="kpi" class="style-text-16">{{objective.kpi}}</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label for="target" class="style-bold-16 text-primary">Target: </label>
+                                <label id="target" class="style-text-16">{{objective.target}}</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <div class="form-group">
+                                <label for="weight" class="style-bold-16 text-primary">Weight: </label>
+                                <label id="weight" class="style-text-16">{{objective.weight}}</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="form-group">
+                                <label for="selfAppraisal" class="style-bold-16 text-primary">Self Appraisal: </label>
+                                <label id="selfAppraisal" class="style-text-16">{{objective.selfAppraisal}}</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="form-group">
+                                <label for="evidenceFile" class="style-bold-16 text-primary">Evidence File: </label>
+                                <a id="evidenceFile" ng-if="objective.evidenceFile!=null" href="{{objective.evidenceFile}}" target="_blank" class="style-text-16 btn btn-info btn-xs">Download</a>
+                                <label ng-if="objective.evidenceFile==null" class="style-bold-16 text-warning">No File attach</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label for="comments" class="style-bold-16 text-primary">Comments: </label>
+                                <label id="comments" class="style-text-16">{{objective.comments}}</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <label for="performanceAppraisal" class="style-bold-16 text-primary">Performance Appraisal: </label>
+                            <label id="performanceAppraisal" class="style-text-16">{{objective.performanceAppraisal}}</label>
+                        </div>
+                    </div>
+                </div>
+                <hr class="border-line" />
+                <div class="row">
+                    <div class="col-lg-10">
+                        <div class="form-group">
+                            <label for="TotalScore" class="style-bold-16 text-primary">Total Gain Score: </label>
+                            <label id="TotalScore" class="style-text-16">{{info.totalScore}}</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning" ng-click="ReportDownload(info,Objectives)"><i class="fa fa-download" aria-hidden="true"></i> Download</button>
+                <button type="button" class="btn btn-info" ng-click="ReportPrint(info,Objectives)"><i class="fa fa-print" aria-hidden="true"></i> Print</button>
+                <button type="button" class="btn btn-primary" ng-click="$dismiss()"><i class="fa fa-check" aria-hidden="true"></i> Ok</button>
+            </div>
+        </div>
+    </div>
+</div>

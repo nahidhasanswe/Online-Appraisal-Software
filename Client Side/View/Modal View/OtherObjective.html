@@ -1,0 +1,112 @@
+﻿<div tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div>
+        <form>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" ng-click="$dismiss()" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">{{objective.employeeName}}</h4>
+                </div>
+                <div id="printer" class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="form-group">
+                                <label for="employeeId" class="text-bold text-primary">Employee Id:</label>
+                                <label id="employeeId"><span class="text-style">{{objective.employeeId}}</span></label>
+                            </div>
+                        </div>
+                        <div class="col-lg-5">
+                            <div class="form-group">
+                                <label for="Name" class="text-bold text-primary">Employee Name:</label>
+                                <label id="Name"><span class="text-style">{{objective.employeeName}}</span></label>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                <label for="joinDate" class="text-bold text-primary">Join Date:</label>
+                                <label id="joinDate"><span class="text-style">{{objective.joiningDate|date:'dd/MM/yyyy'}}</span></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="form-group">
+                                <label for="position" class="text-bold text-primary">Postition:</label>
+                                <label id="position"><span class="text-style">{{objective.designation}}</span></label>
+                            </div>
+                        </div>
+                        <div class="col-lg-5">
+                            <div class="form-group">
+                                <label for="department" class="text-bold text-primary">Department:</label>
+                                <label id="department"><span class="text-style">{{objective.department}}</span></label>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                <label for="section" class="text-bold text-primary">Section:</label>
+                                <label id="section"><span class="text-style">{{objective.section}}</span></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="form-group">
+                                <label for="objectiveId" class="text-bold text-primary">Objective Id: </label>
+                                <label id="objectiveId"><span class="text-style">{{objective.objectiveId}}</span></label>
+                            </div>
+                        </div>
+                        <div class="col-lg-8">
+                            <div class="form-group">
+                                <label for="objective" class="text-bold text-primary">Objective:</label>
+                                <label id="objective"><span class="text-style">{{objective.title}}</span></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label for="kpi" class="text-bold text-primary">Key Performace Indicators:</label>
+                                <div id="kpi" class="text-normal">{{objective.kpi}}</div>
+                                <div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label for="target" class="text-bold text-primary">Target:</label>
+                                <div id="target" class="text-normal">{{objective.target}}</div>
+                                <div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label for="Weight" class="text-bold text-primary">Weight:</label>
+                                <div id="Weight" class="text-normal">{{objective.weight}}</div>
+                                <div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label for="note" class="text-bold text-primary">Note &amp; Action:</label>
+                                <div id="note" class="text-normal">{{objective.note}}</div>
+                                <div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-warning" ng-click="ReportDownload(objective)"><i class="fa fa-download"></i> Download</button>
+                    <button type="button" class="btn btn-info" ng-click="ReportPrint(objective)"><i class="fa fa-print"></i> Print</button>
+                    <button type="button" class="btn btn-default" ng-click="$dismiss()"><i class="fa fa-times"></i> Cancel</button>
+                    <button ng-if="!objective.isObjectiveApproved" type="button" class="btn btn-success" ng-click="ApproveObjective(objective.objectiveId)"><i class="fa fa-check"></i> Have Read</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+

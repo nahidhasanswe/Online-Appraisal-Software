@@ -1,0 +1,43 @@
+﻿<div tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" ng-click="$dismiss()" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">{{objective.title}}</h4>
+            </div>
+            <div id="printer" class="modal-body">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label for="kpi"><h4 class="text-primary">Key Performance Indicators: </h4></label>
+                            <div id="kpi">{{objective.kpi}}</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label for="target"><h4 class="text-primary">Target: </h4></label>
+                            <div id="target">{{objective.target}}</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label for="weight"><h4 class="text-primary">Weight: </h4></label>
+                            <div id="weight">{{objective.weight}}</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label for="note"><h4 class="text-primary">Note &amp; Action: </h4></label>
+                            <div id="note" style="white-space: pre-line !important;">{{objective.note}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning" ng-click="ReportDownload(objective)"><i class="fa fa-download"></i> Download</button>
+                <button type="button" class="btn btn-info" ng-click="ReportPrint(objective)"><i class="fa fa-print"></i> Print</button>
+                <button type="button" class="btn btn-primary" ng-click="$dismiss()">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>   

@@ -1,0 +1,175 @@
+﻿<div tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" ng-click="$dismiss()" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Add New Employee</h4>
+            </div>
+            <form name="EmployeeData" ng-submit="StoreEmployee(EmployeeData.$invalid)" novalidate>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="col-lg-12"><label class="text-bold text-primary">Employee Information:</label></div>
+                                <div class="col-lg-3 style-bold"><b>Id: </b></div>
+                                <div class="col-lg-9 style-text">
+                                    <div class="form-group">
+                                        <input class="form-control" name="EmployeeId" ng-model="New.EmployeeId" type="text" required/>
+                                        <div ng-messages="EmployeeData.EmployeeId.$error" ng-if="EmployeeData.$submitted" class="text-danger">
+                                            <div ng-message="required">Employee Id is required</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 style-bold"><b>Name: </b></div>
+                                <div class="col-lg-9">
+                                    <div class="form-group">
+                                        <input type="text" name="EmployeeName" ng-model="New.EmployeeName" class="form-control style-text" required/>
+                                        <div ng-messages="EmployeeData.EmployeeName.$error" ng-if="EmployeeData.$submitted" class="text-danger">
+                                            <div ng-message="required">Employee Name is required</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 style-bold"><b>Email: </b></div>
+                                <div class="col-lg-9">
+                                    <div class="form-group">
+                                        <input type="text" name="Email" ng-model="New.Email" class="form-control style-text"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <label class="text-bold text-primary">Job Information:</label>
+                                </div>
+                                <div class="col-lg-3 style-bold"><b>Designation: </b></div>
+                                <div class="col-lg-9 style-text">
+                                    <div class="form-group">
+                                        <select class="form-control" name="designation" ng-model="New.DesignationId" ng-options="designation.id as designation.designation for designation in DesignationList" required>
+                                            <option value="">Select Designation</option>
+                                        </select>
+                                        <div ng-messages="EmployeeData.designation.$error" ng-if="EmployeeData.$submitted" class="text-danger">
+                                            <div ng-message="required">Designation is required</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 style-bold"><b>Department: </b></div>
+                                <div class="col-lg-9 style-text">
+                                    <div class="form-group">
+                                        <select class="form-control" name="department" ng-model="Infoo.Department" ng-change="getSectionList(Infoo.Department)" ng-options="department.id as department.department for department in DepartmentList" required>
+                                            <option value="">Select Department</option>
+                                        </select>
+                                        <div ng-messages="EmployeeData.department.$error" ng-if="EmployeeData.$submitted" class="text-danger">
+                                            <div ng-message="required">Department is required</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 style-bold"><b>Section: </b></div>
+                                <div class="col-lg-8">
+                                    <div class="form-group">
+                                        <select class="form-control" name="section" ng-model="New.SectionId" ng-change="" ng-options="section.id as section.section for section in SectionList" required>
+                                            <option value="">Select Section</option>
+                                        </select>
+                                        <div ng-messages="EmployeeData.section.$error" ng-if="EmployeeData.$submitted" class="text-danger">
+                                            <div ng-message="required">Section is required</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 style-bold"><b>Join Date: </b></div>
+                                <div class="col-lg-8 style-text">
+                                    <div class="form-group">
+                                        <input type="date" name="joinDate" class="form-control" ng-model="New.JoiningDate" required/>
+                                        <div ng-messages="EmployeeData.joinDate.$error" ng-if="EmployeeData.$submitted" class="text-danger">
+                                            <div ng-message="required">Joining Date is required</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 style-bold"><b>Location: </b></div>
+                                <div class="col-lg-9">
+                                    <div class="form-group">
+                                        <input type="text" name="Location" ng-model="New.Location" class="form-control style-text" required/>
+                                        <div ng-messages="EmployeeData.Location.$error" ng-if="EmployeeData.$submitted" class="text-danger">
+                                            <div ng-message="required">Location is required</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 style-bold"><b>Group: </b></div>
+                                <div class="col-lg-9">
+                                    <div class="form-group">
+                                        <select class="form-control" name="group" ng-model="New.GroupName" ng-options="company.id as company.name for company in companyList" required>
+                                            <option value="">Select Group Name</option>
+                                        </select>
+                                        <div ng-messages="EmployeeData.group.$error" ng-if="EmployeeData.$submitted" class="text-danger">
+                                            <div ng-message="required">Group is required</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <label class="text-bold text-primary">Reports To:</label>
+                                </div>
+                                <div class="col-lg-3 style-bold"><b>Reports To: </b></div>
+                                <div class="col-lg-9">
+                                    <div class="form-group">
+                                        <input type="text" name="reportTo" placeholder="Search by Id or Name" class="form-control" ng-model="New.ReportTo" typeahead="value.employeeId as value.employeeName for value in EmployeeList| filter:$viewValue | limitTo:3" typeahead-template-url="searchResults.html" typeahead-no-results="noResult" required/>
+                                        <span style="font-size:12px" ng-if="noResult">No result Found</span>
+                                        <div ng-messages="EmployeeData.reportTo.$error" ng-if="EmployeeData.$submitted" class="text-danger">
+                                            <div ng-message="required">ReportTo Id is required</div>
+                                        </div>
+                                        <script type="text/ng-template" id="searchResults.html">
+                                            <a>
+                                                <div>
+                                                    <span style="display:block; font-size:14px;font-weight:bold">{{match.model.employeeId}} - {{match.model.employeeName}}</span>
+                                                    <span style="font-size:12px">{{match.model.designation}}</span><br />
+                                                    <span style="font-size:12px; font-weight:bold">Department: </span>
+                                                    <span style="font-size:12px">{{match.model.department}}</span> &middot;
+                                                    <span style="font-size:12px; font-weight:bold">Section: </span>
+                                                    <span style="font-size:12px">{{match.model.section}}</span>
+                                                    <hr style="margin-top:10px !important; margin-bottom:10px !important" />
+                                                </div>
+                                            </a>
+                                        </script>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <label class="text-bold text-primary">Assign Roles:</label>
+                                </div>
+                                <div class="col-lg-3 style-bold"><b>Role Name: </b></div>
+                                <div class="col-lg-9">
+                                    <div class="form-group">
+                                        <select class="form-control" name="role" ng-model="New.RoleName" ng-change="" ng-options="role.Name as role.Name for role in Roles" required>
+                                            <option value="">Select Role Name</option>
+                                        </select>
+                                        <div ng-messages="EmployeeData.role.$error" ng-if="EmployeeData.$submitted" class="text-danger">
+                                            <div ng-message="required">Role is required</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" ng-click="$dismiss()"><i class="fa fa-times" aria-hidden="true"></i> Close</button>
+                    <button type="submit" ng-disabled="isProcessing" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i> {{AddButton}}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

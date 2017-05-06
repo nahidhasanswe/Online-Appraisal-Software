@@ -1,0 +1,98 @@
+﻿<section class="wrapper" ng-init="getAuthorization()">
+    
+    <h3><i class="fa fa-dashboard"></i> Dashboard</h3>
+
+    <div class="content-panel">
+        <h4><i class="fa fa-angle-right"></i> Job Description</h4>
+        <br />
+        <section id="unseen">
+            <div class="row">
+                <div>
+                    <div class="col-lg-3" ng-repeat="job in JobChart">
+                        <nvd3-pie-chart id="chart-chart-{{$index}}"
+                                        data="PieChart2(job)"
+                                        x="xFunction()"
+                                        y="yFunction()"
+                                        width="400"
+                                        height="400"
+                                        showLabels="true"
+                                        pieLabelsOutside="false"
+                                        showValues="true"
+                                        color="colorFunction()"
+                                        legendcolor="colorFunction()"
+                                        showLegend="true"
+                                        tooltips="true"
+                                        labelType="percent">
+                            <svg></svg>
+                        </nvd3-pie-chart>
+                       <div class="centered"><h4 for="chart-{{$index}}">{{job.deprtment}}</h4></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <br />
+    <br />
+    <div class="content-panel">
+        <h4><i class="fa fa-angle-right"></i> Self Appraisal</h4>
+        <br />
+        <section id="unseen">
+            <div class="row">
+                <div>
+                    <div class="col-lg-3" ng-repeat="selfAppraisal in SelfChart">
+                        <nvd3-pie-chart id="chart-{{$index+200}}"
+                                        data="PieChart2(selfAppraisal)"
+                                        x="xFunction()"
+                                        y="yFunction()"
+                                        width="400"
+                                        height="400"
+                                        showLabels="true"
+                                        pieLabelsOutside="false"
+                                        showValues="true"
+                                        color="colorFunction()"
+                                        legendcolor="colorFunction()"
+                                        showLegend="true"
+                                        tooltips="true"
+                                        labelType="percent">
+                            <svg></svg>
+                        </nvd3-pie-chart>
+                        <div class="centered"><h4 for="chart-{{$index}}">{{selfAppraisal.department}}</h4></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <br />
+    <br />
+    <div class="content-panel">
+        <h4><i class="fa fa-angle-right"></i> Performace Appraisal</h4>
+        <br />
+        <section id="unseen">
+            <div class="row">
+                <div >
+                    <div class="col-lg-3" ng-repeat="performance in PerformanceChart">
+                        <nvd3-pie-chart id="chart-{{$index+300}}"
+                                        data="PieChart2(performance)"
+                                        x="xFunction()"
+                                        y="yFunction()"
+                                        width="400"
+                                        height="400"
+                                        showLabels="true"
+                                        pieLabelsOutside="false"
+                                        showValues="true"
+                                        color="colorFunction()"
+                                        legendcolor="colorFunction()"
+                                        showLegend="true"
+                                        tooltips="true"
+                                        labelType="percent">
+                            <svg></svg>
+                        </nvd3-pie-chart>
+                        <div class="centered"><h4 for="chart-{{$index}}">{{performance.department}}</h4></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</section>

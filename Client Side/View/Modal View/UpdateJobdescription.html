@@ -1,0 +1,112 @@
+﻿<div tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" ng-click="$dismiss()" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Update your Job Description</h4>
+                </div>
+                <form name="JobData" ng-submit="UpdateJobDescription(JobData.$invalid)" novalidate>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <label for="employeeID">Employee ID:</label>
+                                    <input type="text" class="form-control" id="employeeID" ng-model="account.employeeId" disabled />
+
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <label for="employeeName">Name:</label>
+                                    <input name="Name" type="text" class="form-control" id="employeeName" ng-model="account.employeeName" required />
+                                    <div ng-messages="JobData.Name.$error" ng-if="JobData.$submitted" class="text-danger">
+                                        <div ng-message="required">Name is required</div>
+                                        <div ng-message="pattern">Name is not valid</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <label for="joinDate">Joining Date:</label>
+                                    <input type="text" class="form-control" id="joinDate" ng-model="account.joiningDate" disabled />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <label for="position">Position:</label>
+                                    <input type="text" class="form-control" ng-model="account.designation" disabled />
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <label for="department">Department:</label>
+                                    <input type="text" class="form-control" ng-model="account.department" disabled />
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <label for="section">Section:</label>
+                                    <input type="text" class="form-control" ng-model="account.section" disabled />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <label for="reportTo">Reports to:</label>
+                                    <input type="text" class="form-control" ng-model="account.reportToName" disabled />
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <label for="location">Location:</label>
+                                    <input name="location" class="form-control" type="text" ng-model="account.location" required />
+                                    <div ng-messages="JobData.location.$error" ng-if="JobData.$submitted" class="text-danger">
+                                        <div ng-message="required">Location is required</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <label for="location">Email:</label>
+                                    <input id="location" class="form-control" type="text" ng-model="account.email" disabled />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label for="jobPurpose">Job Purpose:</label>
+                                    <textarea name="jobPurpose" class="form-control" rows="5" ng-model="account.jobPurpose" required></textarea>
+                                    <div ng-messages="JobData.jobPurpose.$error" ng-if="JobData.$submitted" class="text-danger">
+                                        <div ng-message="required">Job Purpose is required</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label for="jobKey">Key Accountabilities:</label>
+                                    <textarea name="jobKey" class="form-control" rows="5" ng-model="account.keyAccountabilities" required></textarea>
+                                    <div ng-messages="JobData.jobKey.$error" ng-if="JobData.$submitted" class="text-danger">
+                                        <div ng-message="required">Key Accountabilities is required</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" ng-click="$dismiss()"><i class="fa fa-times" aria-hidden="true"></i> Close</button>
+                        <button type="submit" class="btn btn-primary" ng-disabled="isProcessing"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> {{UpdateButton}}</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+</div>
+

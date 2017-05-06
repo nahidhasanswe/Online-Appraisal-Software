@@ -1,0 +1,13 @@
+﻿{
+  "Code": true,
+  "KPI": true,
+  "Note": true,
+  "Status": true,
+  "Target": false,
+  "Title": true,
+  "Weight": false,
+  "SelfAppraisal": true,
+  "Comments": false,
+  "EvidenceFile": true
+}
+

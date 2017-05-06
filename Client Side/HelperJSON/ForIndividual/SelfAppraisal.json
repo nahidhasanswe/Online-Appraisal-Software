@@ -1,0 +1,39 @@
+﻿[
+  {
+    "id": 1,
+    "value": "Code"
+  },
+  {
+    "id": 2,
+    "value": "Title"
+  },
+  {
+    "id": 3,
+    "value": "KPI"
+  },
+  {
+    "id": 4,
+    "value": "Target"
+  },
+  {
+    "id": 5,
+    "value": "Weight"
+  },
+  {
+    "id": 6,
+    "value": "Note"
+  },
+  {
+    "id": 7,
+    "value": "SelfAppraisal"
+  },
+  {
+    "id": 8,
+    "value": "Comments"
+  },
+  {
+    "id": 9,
+    "value": "EvidenceFile"
+  }
+]
+

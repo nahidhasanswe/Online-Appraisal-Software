@@ -1,0 +1,103 @@
+﻿<span ng-init="ViewObjectiveByParams()"></span>
+<section class="wrapper">
+    <h3><i class="fa fa-angle-right"></i> Job Objectives List</h3>
+    <br />
+    <form>
+        <div class="content-panel">
+            <h4><i class="fa fa-angle-right"></i> Pending Objectives List</h4>
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="form-group">
+                        <div class="input-group" style="margin-left:10px; margin-right:10px">
+                            <span class="input-group-addon" id="basic-addon1"><i class="fa fa-search" aria-hidden="true"></i></span>
+                            <input type="text" ng-model="filter" class="form-control" placeholder="Search" aria-describedby="basic-addon1">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="form-group">
+                        <div class="input-group" style="margin-left:10px; margin-right:10px">
+                            <span class="input-group-addon" id="basic-addon1"><i class="fa fa-list-ol" aria-hidden="true"></i></span>
+                            <select class="form-control" ng-model="selectItem" ng-change="setitemsPerPage(selectItem)" ng-options="o.value for o in ViewItems"></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="form-group">
+                        <div class="input-group" style="margin-left:10px; margin-right:10px">
+                            <span class="input-group-addon" id="basic-addon1"><i class="fa fa-list" aria-hidden="true"></i></span>
+                            <div ng-dropdown-multiselect="" events="changeEvents" extra-settings="dropConfig"
+                                 options="AllColumn" selected-model="SelectedColumn" ></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="form-group">
+                        <div class="input-group" style="margin-left:10px; margin-right:10px">
+                            <span class="input-group-addon" id="basic-addon1"><i class="fa fa-adjust" aria-hidden="true"></i></span>
+                            <select class="form-control" ng-model="Selected" ng-change="" ng-options="o.label for o in StatusBy">
+                                <option value="">All</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="pull-right" style="margin-right:50px !important">
+                        <div class="dropdown">
+                            <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown"><i class="fa fa-download"></i> Download <i class="fa fa-caret-down" aria-hidden="true"></i></button>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                                <li role="presentation"><a role="menuitem" tabindex="-1" onclick="$('#objectivelist').tableExport({ type: 'excel', pdfFontSize: 12, escape: 'false', fileName: 'Employee Objective List' });" href=""><i class="fa fa-table" aria-hidden="true"></i> Table Data</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="" ng-click="GenerateOtherObjectiveListExcel(Objectives)"><i class="fa fa-list" aria-hidden="true"></i> All Data</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <section id="unseen">
+                <table id="objectivelist" class="table table-bordered table-striped table-condensed">
+                    <thead>
+                        <tr>
+                            <th ng-if="SelectCol.EmployeeID">Employee Id</th>
+                            <th ng-if="SelectCol.EmployeeName">Employee Name</th>
+                            <th ng-if="SelectCol.Code">Code</th>
+                            <th ng-if="SelectCol.Title">Title</th>
+                            <th ng-if="SelectCol.KPI">KPI</th>
+                            <th ng-if="SelectCol.Target">Target</th>
+                            <th ng-if="SelectCol.Weight">Wieght</th>
+                            <th ng-if="SelectCol.Note">Note</th>
+                            <th ng-if="SelectCol.Status">Status</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr dir-paginate="objective in Objectives|filter:{isObjectiveApproved:Selected.value,$:filter}:strict|itemsPerPage:ViewPerPage">
+                            <td ng-if="SelectCol.EmployeeID">{{objective.employeeId}}</td>
+                            <td ng-if="SelectCol.EmployeeName">{{objective.employeeName}}</td>
+                            <td ng-if="SelectCol.Code">{{objective.objectiveId}}</td>
+                            <td ng-if="SelectCol.Title">{{objective.title}}</td>
+                            <td ng-if="SelectCol.KPI">{{objective.kpi}}</td>
+                            <td ng-if="SelectCol.Target">{{objective.target}}</td>
+                            <td ng-if="SelectCol.Weight">{{objective.weight}}</td>
+                            <td ng-if="SelectCol.Note">{{objective.note}}</td>
+                            <td ng-if="SelectCol.Status">
+                                <span ng-if="objective.isObjectiveApproved" class="label label-info label-mini">Have Read</span>
+                                <span ng-if="!objective.isObjectiveApproved" class="label label-danger label-mini">Pending</span>
+                            </td>
+                            <td>
+                                <button class="btn btn-success btn-xs" ng-click="viewObjectives(objective)">View</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div style="margin-left:5px; vertical-align:middle">
+                    <dir-pagination-controls max-size="5"
+                                             direction-links="true"
+                                             boundary-links="true">
+                    </dir-pagination-controls>
+                </div>
+            </section>
+        </div>
+    </form>
+
+</section>

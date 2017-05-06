@@ -1,0 +1,15 @@
+﻿{
+  "EmployeeId": true,
+  "EmployeeName": true,
+  "Designation": true,
+  "Department": true,
+  "Section": false,
+  "ReportTo": false,
+  "Title": true,
+  "KPI": true,
+  "Target": true,
+  "SelfAppraisal": true,
+  "PerformanceAppraisal": false,
+  "EvidenceFile": true,
+  "Status": false
+}

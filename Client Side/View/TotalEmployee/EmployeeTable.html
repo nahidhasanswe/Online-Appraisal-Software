@@ -1,0 +1,57 @@
+﻿<section class="wrapper">
+    <h3><i class="fa fa-angle-right"></i> Number of Employees</h3>
+    <div class="row">
+        <div class="col-lg-2">
+            <button class="btn btn-success" ng-click="addEmployeeNumbers()"><i class="fa fa-plus"> Add Employee number</i></button>
+        </div>
+    </div>
+    <br />
+    <div class="content-panel">
+        <h4><i class="fa fa-angle-right"></i> All Employee Numbers</h4>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="pull-right" style="margin-right:50px !important">
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown"><i class="fa fa-download"></i> Download <i class="fa fa-caret-down" aria-hidden="true"></i></button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                            <li role="presentation"><a role="menuitem" tabindex="-1" onclick="$('#EmployeeList').tableExport({ type: 'excel', pdfFontSize: 12, escape: 'false', fileName: 'Employee Numbers' });" href=""><i class="fa fa-table" aria-hidden="true"></i> Excel Sheet</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section id="unseen">
+            <table id="EmployeeList" class="table table-bordered table-striped table-condensed">
+                <thead>
+                    <tr>
+                        <th>Serial No</th>
+                        <th>Head of Department</th>
+                        <th>Department</th>
+                        <th>Number of Employee</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="info in getEmployeeNumbersList">
+                        <td>{{$index+1}}</td>
+                        <td>{{info.headOfDepartment}}</td>
+                        <td>{{info.departmentName}}</td>
+                        <td>{{info.numberOfEmployees}}</td>
+                        <td>
+                            <button class="btn btn-success btn-xs" ng-click="updateEmployeeNumber(info)"><i class="fa fa-pencil-square-o"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="row">
+                <div class="col-lg-9">
+                   <div class="pull-right">
+                       <label style="font-size:20px !important; font-weight:bold !important">Total Number of Employee: </label>
+                       <label style="font-size:20px !important; font-weight:bold !important; color: green"> {{TotalNumbers}}</label>
+                   </div>
+                </div>
+            </div>
+
+        </section>
+    </div>
+</section>

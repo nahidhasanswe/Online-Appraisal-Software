@@ -1,0 +1,47 @@
+﻿<div tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div>
+        <form name="uploadData" ng-submit="" novalidate>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" ng-click="$dismiss()" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Add your Evidence File</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-2" ng-hide="true">
+                            <input type="file" id="file" name="evidenceFile" ng-hide="true" accept="images/*" ng-files="getFiles($files)" required/>
+                        </div>
+                        <div class="col-lg-10">
+                            <input type="button" ng-show="hasFile" class="btn btn-info" value="Add File" onclick="document.getElementById('file').click();" />
+                            <label class="text-danger" ng-show="hasFile&&uploadData.$submitted">Please browse your Evidence File</label>
+                        </div>
+                    </div>
+                    <div class="row" ng-repeat="image in imagesrc">
+                        <div class="col-lg-3">
+                            <div>
+                                <img src="{{image.Src}}" class="img-responsive" />
+                            </div>
+                        </div>
+                        <div class="col-lg-9">
+                            <div class="pull-right">
+                                <button type="button" class="close" ng-click="RemoveImage()" aria-hidden="true">&times;</button>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <label class="file-title">{{image.Name}}</label>
+                                </div>
+                                <div class="col-lg-12">
+                                    <label for="imageTitle" id="imageSize" class="file-size">{{image.Size}} KB</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" ng-click="$dismiss()">Close</button>
+                    <button type="submit" class="btn btn-primary" ng-disabled="isProcess" ng-click="UploadFile(uploadData.$invalid)"><i class="fa fa-upload" aria-hidden="true"></i> {{uploadButton}}</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>   

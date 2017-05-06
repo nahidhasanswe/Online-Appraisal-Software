@@ -1,0 +1,67 @@
+﻿[
+  {
+    "id": 1,
+    "label": "Code"
+  },
+  {
+    "id": 2,
+    "label": "Title"
+  },
+  {
+    "id": 3,
+    "label": "KPI"
+  },
+  {
+    "id": 4,
+    "label": "Target"
+  },
+  {
+    "id": 5,
+    "label": "Weight"
+  },
+  {
+    "id": 6,
+    "label": "Note"
+  },
+  {
+    "id": 7,
+    "label": "Employee Id"
+  },
+
+  {
+    "id": 8,
+    "label": "Employee Name"
+  },
+
+  {
+    "id": 9,
+    "label": "Position"
+  },
+
+  {
+    "id": 10,
+    "label": "Department"
+  },
+
+  {
+    "id": 11,
+    "label": "Section"
+  },
+
+  {
+    "id": 12,
+    "label": "Status"
+  },
+  {
+    "id": 13,
+    "label": "Self Appraisal"
+  },
+  {
+    "id": 14,
+    "label": "Comments"
+  },
+  {
+    "id": 15,
+    "label": "EvidenceFile"
+  }
+]

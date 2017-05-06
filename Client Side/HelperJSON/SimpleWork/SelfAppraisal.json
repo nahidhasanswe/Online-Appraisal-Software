@@ -1,0 +1,22 @@
+﻿[
+  {
+    "id": 5,
+    "value": "5. OutStanding"
+  },
+  {
+    "id": 4,
+    "value": "4. Exceeds Expectations"
+  },
+  {
+    "id": 3,
+    "value": "3. Meets Expectations"
+  },
+  {
+    "id": 2,
+    "value": "2. Meets some but not all expectations"
+  },
+  {
+    "id": 1,
+    "value": "1. Fails to meet expectations"
+  }
+]

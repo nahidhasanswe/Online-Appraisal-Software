@@ -1,0 +1,14 @@
+﻿[
+  {
+    "id": "36E0C065-79F6-4408-8585-F8F9FCE2EC60",
+    "Name": "Employee"
+  },
+  {
+    "id": "6CF3E16E-7F29-4D3A-9584-260D45D230B9",
+    "Name": "Department Head"
+  },
+  {
+    "id": "E83DAA3B-0190-4F5A-86CD-3684BD7BF03B",
+    "Name": "Super Admin"
+  }
+]

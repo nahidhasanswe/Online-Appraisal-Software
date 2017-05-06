@@ -1,0 +1,9 @@
+﻿{
+  "Code": true,
+  "KPI": true,
+  "Note": false,
+  "Status": true,
+  "Target": true,
+  "Title": true,
+  "Weight": false
+}

@@ -1,0 +1,59 @@
+﻿<section class="wrapper">
+    <h3><i class="fa fa-angle-right"></i>Self Appraisal</h3>
+    <div class="row">
+        <div class="col-lg-2" ng-if="ObjectiveList!=null"><button class="btn btn-success" ng-disabled="ObjectiveList.overallScore!=null" ng-click="addSelfAppraisal()"><i class="fa fa-plus-square-o" aria-hidden="true"></i> Add Self Appraisal</button></div>
+    </div>
+    <br />
+    <div class="content-panel">
+        <h4><i class="fa fa-angle-right"></i> Your Objectives</h4>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="pull-right" style="margin-right:50px !important">
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown"><i class="fa fa-download"></i> Download <i class="fa fa-caret-down" aria-hidden="true"></i></button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                            <li role="presentation"><a role="menuitem" tabindex="-1" onclick="$('#selfAppraisalList').tableExport({ type: 'excel', pdfFontSize: 12, escape: 'false', fileName: 'Self Appraisal' });" href=""><i class="fa fa-table" aria-hidden="true"></i> Table Data</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="" ng-click="GenerateSelfAppraisalExcel(Objectives)"><i class="fa fa-list" aria-hidden="true"></i> All Data</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+        <section id="unseen">
+            <table id="selfAppraisalList" class="table table-bordered table-striped table-condensed">
+                <thead>
+                    <tr>
+                        <th>Code</th>
+                        <th>Title</th>
+                        <th>KPI</th>
+                        <th>Target</th>
+                        <th>Weight</th>
+                        <th>Note</th>
+                        <th>Comments</th>
+                        <th>Self Appraisal</th>
+                        <th>Evidence File</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="objective in Objectives">
+                        <td>{{objective.id}}</td>
+                        <td>{{objective.title}}</td>
+                        <td>{{objective.kpi}}</td>
+                        <td>{{objective.target}}</td>
+                        <td>{{objective.weight}}</td>
+                        <td>{{objective.note}}</td>
+                        <td>{{objective.comments}}</td>
+                        <td>{{objective.selfAppraisal}}</td>
+                        <td>
+                            <button ng-if="objective.evidenceFile==null" class="btn btn-primary btn-xs" ng-click="addEvidenceFile(objective.id)"><i class="fa fa-pencil"></i> Add File</button>
+                            <a ng-if="objective.evidenceFile!=null" class="btn btn-info btn-xs" href="{{objective.evidenceFile}}" target="_blank"><i class="fa fa-eye" aria-hidden="true"></i> View</a>
+                        </td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+</section>
+

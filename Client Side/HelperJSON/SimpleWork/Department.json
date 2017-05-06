@@ -1,0 +1,26 @@
+﻿[
+  {
+    "id": 1,
+    "Department": "Accounting"
+  },
+  {
+    "id": 2,
+    "Department": "Business Development"
+  },
+  {
+    "id": 3,
+    "Department": "Human Resources"
+  },
+  {
+    "id": 4,
+    "Department": "Marketing"
+  },
+  {
+    "id": 5,
+    "Department": "Training"
+  },
+  {
+    "id": 6,
+    "Department": "Sales"
+  }
+]

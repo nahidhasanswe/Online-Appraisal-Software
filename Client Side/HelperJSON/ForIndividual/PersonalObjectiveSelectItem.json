@@ -1,0 +1,23 @@
+﻿[
+  {
+    "id": 1,
+    "label": "Code"
+  },
+  {
+    "id": 2,
+    "label": "Title"
+  },
+  {
+    "id": 3,
+    "label": "KPI"
+  },
+  {
+    "id": 4,
+    "label": "Target"
+  },
+  {
+    "id": 7,
+    "label": "Status"
+  }
+]
+

@@ -1,0 +1,50 @@
+﻿[
+  {
+    "id": 1,
+    "label": "Employee Id"
+  },
+  {
+    "id": 2,
+    "label": "Employee Name"
+  },
+  {
+    "id": 3,
+    "label": "Designation"
+  },
+  {
+    "id": 4,
+    "label": "Department"
+  },
+  {
+    "id": 5,
+    "label": "Section"
+  },
+  {
+    "id": 6,
+    "label": "Email"
+  },
+    {
+    "id": 7,
+    "label": "Location"
+  },
+  {
+    "id": 8,
+    "label": "Joining Date"
+  },
+  {
+    "id": 9,
+    "label": "Report To"
+  },
+  {
+    "id": 10,
+    "label": "Report to Designation"
+  },
+  {
+    "id": 11,
+    "label": "Report to Department"
+  },
+  {
+    "id": 12,
+    "label": "Status"
+  }
+]

@@ -1,0 +1,126 @@
+﻿<section class="wrapper">
+    <h3><i class="fa fa-angle-right"></i> Department, Section and Designation Configuration</h3>
+    <br />
+    <div class="content-panel">
+        <div class="row">
+            <div class="col-lg-7">
+                <h4><i class="fa fa-angle-right"></i> Department List</h4>
+                <div class="row">
+                    <div style="margin:10px;">
+                        <div class="col-lg-2">
+                            <button class="btn btn-primary" ng-click="AddDepartment()"><i class="fa fa-plus"> Add Department</i></button>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <section id="unseen">
+                    <table id="EmployeeList" class="table table-bordered table-striped table-condensed">
+                        <thead>
+                            <tr>
+                                <th>Serial No</th>
+                                <th>Department Name</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr pagination-id="Department" dir-paginate="department in DepartmentList|itemsPerPage:10">
+                                <td>{{$index+1}}</td>
+                                <td>{{department.department}}</td>
+                                <td>
+                                    <button class="btn btn-success btn-xs" ng-click="UpdateDepartment(department)"><i class="fa fa-pencil"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div style="margin-left:5px; vertical-align:middle">
+                        <dir-pagination-controls pagination-id="Department" max-size="10"
+                                                    direction-links="true"
+                                                    boundary-links="true">
+                        </dir-pagination-controls>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-7">
+                <h4><i class="fa fa-angle-right"></i> Section List</h4>
+                <div class="row">
+                    <div style="margin:10px;">
+                        <div class="col-lg-2">
+                            <button class="btn btn-primary" ng-click="AddSection()"><i class="fa fa-plus"> Add Section</i></button>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <section id="unseen">
+                    <table id="EmployeeList" class="table table-bordered table-striped table-condensed">
+                        <thead>
+                            <tr>
+                                <th>Serial No</th>
+                                <th>Section Name</th>
+                                <th>Department Name</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr pagination-id="Section" dir-paginate="section in SectionList|itemsPerPage:10">
+                                <td>{{$index+1}}</td>
+                                <td>{{section.section}}</td>
+                                <td>{{section.department}}</td>
+                                <td>
+                                    <button class="btn btn-success btn-xs" ng-click="UpdateSection(section)"><i class="fa fa-pencil"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div style="margin-left:5px; vertical-align:middle">
+                        <dir-pagination-controls pagination-id="Section" max-size="10"
+                                                 direction-links="true"
+                                                 boundary-links="true">
+                        </dir-pagination-controls>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-7">
+                <h4><i class="fa fa-angle-right"></i> Designation List</h4>
+                <div class="row">
+                    <div style="margin:10px;">
+                        <div class="col-lg-2">
+                            <button class="btn btn-primary" ng-click="AddDesignation()"><i class="fa fa-plus"> Add Designation</i></button>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <section id="unseen">
+                    <table id="EmployeeList" class="table table-bordered table-striped table-condensed">
+                        <thead>
+                            <tr>
+                                <th>Serial No</th>
+                                <th>Designation Name</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr pagination-id="Designation" dir-paginate="designation in DesignationList|itemsPerPage:10">
+                                <td>{{$index+1}}</td>
+                                <td>{{designation.designation}}</td>
+                                <td>
+                                    <button class="btn btn-success btn-xs" ng-click="UpdateDesignation(designation)"><i class="fa fa-pencil"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div style="margin-left:5px; vertical-align:middle">
+                        <dir-pagination-controls pagination-id="Designation" max-size="10"
+                                                 direction-links="true"
+                                                 boundary-links="true">
+                        </dir-pagination-controls>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <br />
+    </div>
+</section>

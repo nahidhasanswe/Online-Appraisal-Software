@@ -1,0 +1,38 @@
+﻿<div tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" ng-click="$dismiss()" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Update Company Name</h4>
+            </div>
+            <form name="companyData" ng-submit="StoreCompany(companyData.$invalid, newCompany)" novalidate>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label for="section" class="text-bold text-primary">Short Name</label>
+                                <input id="section" name="shortName" class="form-control" ng-model="newCompany.id" required />
+                                <div ng-messages="companyData.shortName.$error" ng-if="companyData.$submitted" class="text-danger">
+                                    <div ng-message="required">Short Name is required</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label for="Name" class="text-bold text-primary">Full Name</label>
+                                <input id="Name" name="fullName" class="form-control" ng-model="newCompany.name" required />
+                                <div ng-messages="companyData.fullName.$error" ng-if="companyData.$submitted" class="text-danger">
+                                    <div ng-message="required">FullName is required</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" ng-click="$dismiss()"><i class="fa fa-times" aria-hidden="true"></i> Close</button>
+                    <button type="submit" ng-disabled="isProcess" class="btn btn-primary"><i class="fa fa-plus-circle" aria-hidden="true"></i> {{updateCompanyButton}}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

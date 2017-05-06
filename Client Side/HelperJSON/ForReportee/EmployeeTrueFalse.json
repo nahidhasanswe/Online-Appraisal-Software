@@ -1,0 +1,14 @@
+﻿{
+  "EmployeeId": true,
+  "EmployeeName": true,
+  "Designation": true,
+  "Department": false,
+  "Section": false,
+  "Email": true,
+  "JoiningDate": true,
+  "JobPurpose": false,
+  "KeyAccountatibilities": false,
+  "ReportTo": false,
+  "Location": false,
+  "Status": true
+}

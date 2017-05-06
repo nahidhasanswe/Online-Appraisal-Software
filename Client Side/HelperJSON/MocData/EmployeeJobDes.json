@@ -1,0 +1,17 @@
+﻿{
+  "EmployeeId": 10110,
+  "EmployeeName": "Shah Alam",
+  "JoiningDate": "10-02-2014",
+  "designation": "Senior Officer",
+  "department": "Human Resource",
+  "section": "Compliance",
+  "Location": "AKL",
+  "Email": "ShahAlom@unifill.com",
+  "reportToName": "Naqzmul Haque",
+  "reportToDesignation": "Head",
+  "reportToDepartment": "Human Resource",
+  "JobPurpose": " Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+  "KeyAccountabilities": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.",
+  "Status": false
+}
+

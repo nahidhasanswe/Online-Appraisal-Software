@@ -1,0 +1,13 @@
+﻿{
+  "EmployeeId": true,
+  "EmployeeName": true,
+  "Designation": true,
+  "Department": true,
+  "Section": true,
+  "Email": false,
+  "JoiningDate": false,
+  "ReportTo": true,
+  "ReportToDesignation": false,
+  "TotalScore": true,
+  "Increament": true
+}

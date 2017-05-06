@@ -1,0 +1,278 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Dashboard">
+    <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+
+    <title>Unifill Group</title>
+    <link href="assets/css/bootstrap-theme.css" rel="stylesheet" />
+    <link href="assets/css/Checkbox.css" rel="stylesheet" />
+    <link href="assets/css/bootstrap-select.min.css" rel="stylesheet" />
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <!--external css-->
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="assets/lineicons/style.css">
+    
+    <!-- Custom styles for this template -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/style-responsive.css" rel="stylesheet">
+
+    <link href="assets/css/loading-bar.css" rel="stylesheet" />
+    <!-- Css for Responsive Table-->
+    <link href="assets/css/table-responsive.css" rel="stylesheet" />
+
+    <!-- Sweet Alert Css -->
+    <link href="assets/css/sweetalert.min.css" rel="stylesheet" />
+
+    <link href="assets/css/ngPrint.min.css" rel="stylesheet" />
+    <link href="assets/css/angular-datepicker.min.css" rel="stylesheet" />
+
+    <link href="assets/css/nv.d3.css" rel="stylesheet" />
+
+    
+    
+    <style type="text/css">
+        .text-bold{
+            font-size:16px !important;
+            font-weight:bold;
+        }
+        .text-style{
+            font-size:16px !important;
+        }
+        .text-normal{
+            font-size:14px !important;
+        }
+        .borderLine{
+            color:seagreen !important;
+            border-color:seagreen !important;
+            border-width:2px !important;
+            border-style:solid !important;
+        }
+        .border-line{
+            color:#D30E97 !important;
+            border-color:#D30E97 !important;
+            border-width:1px !important;
+            border-style:solid !important;
+            padding: 0px !important;
+            margin-bottom:10px;
+        }
+
+        .style-bold{
+             font-size:14px !important;
+            font-weight:bold;
+        }
+        .style-bold-16{
+             font-size:16px !important;
+            font-weight:bold;
+        }
+        .style-text{
+            font-size:14px !important;
+        }
+        .style-text-16{
+            font-size:16px !important;
+        }
+
+        #chart table {
+            border-spacing: 0;
+            border-collapse: separate;
+        }
+
+        #chart tr td {
+            line-height: 15px;
+        }
+
+        .title {
+            color: red;
+        }
+
+        .google-visualization--orgchart-node-medium {
+            font-size: 13px;
+        }
+    </style>
+    
+  </head>
+
+  <body ng-app="myApp">
+
+  <section id="container" >
+      <!-- **********************************************************************************************************************************************************
+      TOP BAR CONTENT & NOTIFICATIONS
+      *********************************************************************************************************************************************************** -->
+      <!--header start-->
+      <header class="header black-bg" ng-controller="homeController">
+              <div class="sidebar-toggle-box">
+                  <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+              </div>
+            <!--logo start-->
+            <a href="index.html" class="logo"><img src="assets/img/logo.png" style="width:100px; height:38px;" /></a>
+            <!--logo end-->
+            <div class="top-menu">
+            	<ul class="nav pull-right top-menu">
+                    <li><a class="logout" href="" ng-click="logout()">Logout</a></li>
+            	</ul>
+            </div>
+        </header>
+      <!--header end-->
+      
+      <!-- **********************************************************************************************************************************************************
+      MAIN SIDEBAR MENU
+      *********************************************************************************************************************************************************** -->
+      <!--sidebar start-->
+      <aside>
+          <div id="sidebar" ng-controller="homeController"  class="nav-collapse ">
+              <!-- sidebar menu start-->
+              <ul class="sidebar-menu" id="nav-accordion">
+              
+              	  <p class="centered"><a href="#"><img src="assets/img/user-pic.jpg" class="img-circle" width="60"></a></p>
+              	  <h5 class="centered">{{Name}}</h5>
+              	  	
+                  <li class="mt" ng-show="Role=='Super Admin'">
+                      <a class="active" href="#/home">
+                          <i class="fa fa-dashboard"></i>
+                          <span>Dashboard</span>
+                      </a>
+                  </li>
+
+                  <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="fa fa-user"></i>
+                          <span>Employee Profile</span>
+                          <div class="pull-right"><i class="fa fa-angle-double-down" aria-hidden="true"></i></div>
+                      </a>
+                      <ul class="sub">
+                          <li><a  href="#/jobDescription">Job Description</a></li>
+                          <li><a  href="#/jobObjective">My Objectives</a></li>
+                          <li><a  href="#/selfAppraisal">Self Appraisal</a></li>
+                      </ul>
+                  </li>
+
+                  <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="fa fa-cogs"></i>
+                          <span>Manager's Profile</span>
+                          <div class="pull-right"><i class="fa fa-angle-double-down" aria-hidden="true"></i></div>
+                      </a>
+                      <ul class="sub">
+                          <li><a  href="#/MyEmployee">Employee List</a></li>
+                          <li><a  href="#/othersObjectives">Objective List</a></li>
+                          <li><a  href="#/PerformanceAppraisal">Performace Appraisal</a></li>
+                          <li><a href="#/DepartmentalOrganogram">Departmental Organogram</a></li>
+                          <li ng-show="Role=='Department Head'"><a href="#/objectiveList">Departmental Objectives</a></li>
+                      </ul>
+                  </li>
+
+                  <li class="sub-menu" ng-show="Role=='Super Admin'">
+                      <a href="javascript:;" >
+                          <i class="fa fa-cogs"></i>
+                          <span>Admin Panel</span>
+                          <div class="pull-right"><i class="fa fa-angle-double-down" aria-hidden="true"></i></div>
+                      </a>
+                      <ul class="sub">
+                          <li><a  href="#/AllEmployeeList">Employee List</a></li>
+                          <li><a  href="#/FinalReport">Final Appraisal Report</a></li>
+                          <li><a href="#/DepartmentSection">Department &amp; Section</a></li>
+                          <li><a href="#/Settings">Setting</a></li>
+                      </ul>
+                  </li>
+                  <li class="sub-menu" ng-show="Role=='Department Head'||Role=='Super Admin'">
+                      <a href="javascript:;">
+                          <i class="fa fa-cogs"></i>
+                          <span>Organogram</span>
+                          <div class="pull-right"><i class="fa fa-angle-double-down" aria-hidden="true"></i></div>
+                      </a>
+                      <ul class="sub">
+                          <li><a href="#/TotalOrganogram">Total Organogram</a></li>
+                          <li><a href="#/TotalNumberofEmployee">Total Employee</a></li>
+                      </ul>
+                  </li>
+
+                  <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="fa fa-wrench" aria-hidden="true"></i>
+                          <span>Account Setting</span>
+                          <div class="pull-right"><i class="fa fa-angle-double-down" aria-hidden="true"></i></div>
+                      </a>
+                      <ul class="sub">
+                          <li><a  href="" ng-click="ChangePassword()">Change Password</a></li>
+                          <li><a href="" ng-click="logout()">Logout</a></li>
+                      </ul>
+                  </li>
+              </ul>
+              <!-- sidebar menu end-->
+          </div>
+      </aside>
+      <!--sidebar end-->
+      
+      <!-- **********************************************************************************************************************************************************
+      MAIN CONTENT
+      *********************************************************************************************************************************************************** -->
+      <!--main content start-->
+      <section id="main-content">
+          <data-ng-view></data-ng-view>
+      </section>
+
+  </section>
+
+    <!-- js placed at the end of the document so the pages load faster -->
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="assets/js/jquery.scrollTo.min.js"></script>
+    <script src="assets/js/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="assets/js/jquery.sparkline.js"></script>
+
+    <!--common script for all pages-->
+    <script src="assets/js/common-scripts.js"></script>
+
+    <script src="content/AngularJS Library/angular.min.js"></script>
+    <script src="content/AngularJS Library/lodash.min.js"></script>
+    <script src="content/AngularJS Library/angular-route.min.js"></script>
+    <script src="content/AngularJS Library/ui-bootstrap-tpls.min.js"></script>
+    <script src="content/angularjs-dropdwon-multi-select.js"></script>
+    <script src="content/angular-password.min.js"></script>
+    <script src="content/AngularJS Library/angular-message.min.js"></script>
+    <script src="content/angular-local-storage.js"></script>
+    <script src="content/AngularJS Library/angular-datepicker.min.js"></script>
+
+    <script src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1','packages':['corechart','orgchart']}]}"></script>
+    <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+    <script src="https://cdn.zingchart.com/angular/zingchart-angularjs.js"></script>
+      
+      <!--  Pie Chart -->
+      <script src="content/PieChart js/d3.js"></script>
+      <script src="content/PieChart js/nv.d3.js"></script>
+      <script src="content/PieChart js/angularjs-nvd3-directives.min.js"></script>
+      
+      
+      
+    <!-- Print Directive -->
+    <script src="content/ngPrint.min.js"></script>
+    <script src="content/dirPagination.js"></script>
+
+    <!-- AngularJS Controller and Services -->
+    <script src="Angularjs Controller/Account Controller/AuthInterceptor.js"></script>
+    <script src="content/Controller/route.js"></script>
+
+
+    <script src="content/loading-bar.js"></script>
+    <script src="content/fileupload.js"></script>
+    <script src="content/sweetalert.min.js"></script>
+
+   
+
+
+    <!-- This Section is for PDF exel Generator Jquery-->
+    <script src="assets/js/pdf exel/xlsx.core.min.js"></script>
+    <script src="assets/js/pdf exel/jspdf.min.js"></script>
+    <script src="assets/js/pdf exel/FileSaver.min.js"></script>
+    <script src="assets/js/pdf exel/jspdf.plugin.autotable.js"></script>
+    <script src="assets/js/pdf exel/tableExport.min.js"></script>
+    <script src="content/pdfmake.min.js"></script>
+    <script src="content/vfs_font.js"></script>
+    <script src="content/alasql.min.js"></script>
+  </body>
+</html>

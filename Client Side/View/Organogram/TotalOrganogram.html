@@ -1,0 +1,33 @@
+﻿<section class="wrapper">
+    <h3><i class="fa fa-angle-right"></i> Organogram</h3>
+    <br />
+    <form>
+        <div class="content-panel">
+            <h4><i class="fa fa-angle-right"></i> Total Organogram</h4>
+            <br />
+            <div class="row">
+                <div class="col-lg-2">
+                    <label>Department Name: </label>
+                </div>
+                <div class="col-lg-3">
+                    <select class="form-control" name="designation" ng-model="DepartmentID" ng-change="GetDepartmentWiseOrganogram(DepartmentID)" ng-options="department.id as department.department for department in DepartmentList">
+                        <option value="">All</option>
+                    </select>
+                </div>
+            </div>
+            <section id="unseen">
+                <br />
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div>
+                            <div style="overflow-x: scroll; overflow-y: hidden; width:99%; margin: 10px;" id="chart" ng-model="chartData" agc-on-select="selectHandler(selectedItem)" org-chart="chartData" style="text-align: center">
+                                Please Wait...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </form>
+
+</section>

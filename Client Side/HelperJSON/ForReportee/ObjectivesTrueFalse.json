@@ -1,0 +1,11 @@
+﻿{
+  "EmployeeID": false,
+  "EmployeeName": true,
+  "Code": false,
+  "Title": true,
+  "Weight": false,
+  "Status": true,
+  "KPI": true,
+  "Target": true,
+  "Note": false
+}

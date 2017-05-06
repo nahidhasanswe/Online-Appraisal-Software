@@ -1,0 +1,54 @@
+﻿<div tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" ng-click="$dismiss()" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Update Increment Range and Increment (%)</h4>
+            </div>
+            <form name="IncreamentData" ng-submit="UpdateIncreamentInfo(IncreamentData.$invalid)" novalidate>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label for="deadline" class="text-bold text-primary">Lower Value</label>
+                                <input id="deadline" type="number" name="lower" class="form-control" ng-model="SingleIncreament.lowerScore" min="0" max="100" required/>
+                                <div ng-messages="IncreamentData.lower.$error" ng-if="IncreamentData.$submitted" class="text-danger">
+                                    <div ng-message="required">Deadline is required</div>
+                                    <div ng-message="min">Number must be greater then 0</div>
+                                    <div ng-message="max">Number must be less then 100</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label for="deadline" class="text-bold text-primary">Upper Value</label>
+                                <input id="deadline" type="number" name="upper" class="form-control" ng-model="SingleIncreament.upperScore" min="0" max="100" required/>
+                                <div ng-messages="IncreamentData.upper.$error" ng-if="IncreamentData.$submitted" class="text-danger">
+                                    <div ng-message="required">Deadline is required</div>
+                                    <div ng-message="min">Number must be greater then 0</div>
+                                    <div ng-message="max">Number must be less then 100</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label for="deadline" class="text-bold text-primary">Increamet (%)</label>
+                                <input id="deadline" type="number" name="appraisal" class="form-control" ng-model="SingleIncreament.promotion" min="0" max="100" required />
+                                <div ng-messages="IncreamentData.appraisal.$error" ng-if="IncreamentData.$submitted" class="text-danger">
+                                    <div ng-message="required">Deadline is required</div>
+                                    <div ng-message="min">Number must be greater then 0</div>
+                                    <div ng-message="max">Number must be less then 100</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" ng-click="$dismiss()"><i class="fa fa-times" aria-hidden="true"></i> Close</button>
+                    <button type="submit" ng-disabled="isProcess" class="btn btn-primary"><i class="fa fa-plus-circle" aria-hidden="true"></i> {{increamentButton}}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

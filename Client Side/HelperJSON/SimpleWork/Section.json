@@ -1,0 +1,78 @@
+﻿[
+  {
+    "id": 1,
+    "Section": "Accounts & Finance",
+    "DepartmentId": 1
+  },
+  {
+    "id": 2,
+    "Section": "Accounts",
+    "DepartmentId": 1
+  },
+  {
+    "id": 3,
+    "Section": "Budget & Costing",
+    "DepartmentId": 1
+  },
+  {
+    "id": 4,
+    "Section": "Purchase",
+    "DepartmentId": 1
+  },
+  {
+    "id": 5,
+    "Section": "Business",
+    "DepartmentId": 2
+  },
+  {
+    "id": 6,
+    "Section": "HR",
+    "DepartmentId": 3
+  },
+  {
+    "id": 7,
+    "Section": "Compliance",
+    "DepartmentId": 3
+  },
+  {
+    "id": 8,
+    "Section": "Admin",
+    "DepartmentId": 3
+  },
+  {
+    "id": 9,
+    "Section": "Welfare",
+    "DepartmentId": 3
+  },
+  {
+    "id": 10,
+    "Section": "Marketing",
+    "DepartmentId": 4
+  },
+  {
+    "id": 11,
+    "Section": "ArrangeParty",
+    "DepartmentId": 5
+  },
+  {
+    "id": 12,
+    "Section": "Trainner",
+    "DepartmentId": 5
+  },
+  {
+    "id": 13,
+    "Section": "Output",
+    "DepartmentId": 6
+  },
+  {
+    "id": 14,
+    "Section": "Pre Final",
+    "DepartmentId": 6
+  },
+  {
+    "id": 15,
+    "Section": "Quality",
+    "DepartmentId": 6
+  }
+
+]

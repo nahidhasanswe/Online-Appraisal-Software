@@ -1,0 +1,34 @@
+﻿[
+  {
+    "id": 1,
+    "label": "Employee Id"
+  },
+  {
+    "id": 2,
+    "label": "Employee Name"
+  },
+  {
+    "id": 4,
+    "label": "Title"
+  },
+  {
+    "id": 5,
+    "label": "KPI"
+  },
+  {
+    "id": 6,
+    "label": "Target"
+  },
+  {
+    "id": 10,
+    "label": "Self Appraisal"
+  },
+  {
+    "id": 12,
+    "label": "Evidence File"
+  },
+  {
+    "id": 13,
+    "label": "Performace Appraisal"
+  }
+]

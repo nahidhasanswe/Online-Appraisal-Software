@@ -1,0 +1,29 @@
+﻿<div tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" ng-click="$dismiss()" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Update- {{objDesignation.designation}}</h4>
+            </div>
+            <form name="DesignationData" ng-submit="UpdatingDesignation(DesignationData.$invalid)" novalidate>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label for="section" class="text-bold text-primary">Designation</label>
+                                <input id="section" name="Des" class="form-control" ng-model="objDesignation.designation" required/>
+                                <div ng-messages="DesignationData.Des.$error" ng-if="DesignationData.$submitted" class="text-danger">
+                                    <div ng-message="required">Designation Name is required</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" ng-click="$dismiss()"><i class="fa fa-times" aria-hidden="true"></i> Close</button>
+                    <button type="submit" ng-disabled="isProcess" class="btn btn-primary"><i class="fa fa-pencil" aria-hidden="true"></i> {{DesignationUpdate}}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

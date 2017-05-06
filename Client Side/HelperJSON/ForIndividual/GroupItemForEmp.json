@@ -1,0 +1,12 @@
+﻿[
+  {
+    "id": 1,
+    "value": true,
+    "label": "Approve"
+  },
+  {
+    "id": 2,
+    "value": false,
+    "label": "Pending"
+  }
+]

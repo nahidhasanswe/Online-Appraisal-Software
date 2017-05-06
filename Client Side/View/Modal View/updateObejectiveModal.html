@@ -1,0 +1,65 @@
+﻿<div tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div>
+        <form name="objectiveData" ng-submit="UpdateObjective(objectiveData.$invalid)" novalidate>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" ng-click="$dismiss()" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Update your Objective</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label for="title"><h4>Objective Title</h4></label>
+                                <input type="text" name="title" ng-model="objectiveUpdate.title" class="form-control" required />
+                                <div ng-messages="objectiveData.title.$error" ng-if="objectiveData.$submitted" class="text-danger">
+                                    <div ng-message="required">Objective Title is required</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label for="kpi"><h4>Key Performance Indicators: </h4></label>
+                                <textarea name="kpi" class="form-control" ng-model="objectiveUpdate.kpi" rows="4" required></textarea>
+                                <div ng-messages="objectiveData.kpi.$error" ng-if="objectiveData.$submitted" class="text-danger">
+                                    <div ng-message="required">Objective KPI is required</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label for="target"><h4>Target: </h4></label>
+                                <input type="text" name="target" ng-model="objectiveUpdate.target" class="form-control" required />
+                                <div ng-messages="objectiveData.target.$error" ng-if="objectiveData.$submitted" class="text-danger">
+                                    <div ng-message="required">Objective Target is required</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label for="weight"><h4>Weight: </h4></label>
+                                <input type="number" name="weight" ng-model="objectiveUpdate.weight" class="form-control" required min="1" max="100" />
+                                <div ng-messages="objectiveData.weight.$error" ng-if="objectiveData.$submitted" class="text-danger">
+                                    <div ng-message="required">Objective Weight is required</div>
+                                    <div ng-message="min">Weight can not be less than 1</div>
+                                    <div ng-message="max">Weight can not be greater than 100</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label for="note"><h4>Note &amp; Action: </h4></label>
+                                <textarea name="note" class="form-control" ng-model="objectiveUpdate.note" rows="4"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" ng-click="$dismiss()">Close</button>
+                    <button type="submit" class="btn btn-primary" ng-disabled="isProcessing"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> {{UpdateButton}}</button>
+
+                </div>
+            </div>
+        </form>
+    </div>
+</div>   

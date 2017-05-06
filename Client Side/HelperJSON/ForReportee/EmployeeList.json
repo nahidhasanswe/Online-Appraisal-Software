@@ -1,0 +1,50 @@
+﻿[
+  {
+    "id": 1,
+    "label": "Employee Id"
+  },
+  {
+    "id": 2,
+    "label": "Employee Name"
+  },
+  {
+    "id": 3,
+    "label": "Designation"
+  },
+  {
+    "id": 4,
+    "label": "Department"
+  },
+  {
+    "id": 5,
+    "label": "Section"
+  },
+  {
+    "id": 6,
+    "label": "Email"
+  },
+  {
+    "id": 7,
+    "label": "Joining Date"
+  },
+  {
+    "id": 8,
+    "label": "Job Purpose"
+  },
+  {
+    "id": 9,
+    "label": "Key Accountabilities"
+  },
+  {
+    "id": 10,
+    "label": "Report To"
+  },
+  {
+    "id": 11,
+    "label": "Location"
+  },
+  {
+    "id": 12,
+    "label": "Status"
+  }
+]

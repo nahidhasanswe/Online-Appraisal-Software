@@ -1,0 +1,91 @@
+﻿<div tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" ng-click="$dismiss()" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Employee Objective List</h4>
+            </div>
+            <div class="modal-body">
+                <div ng-if="EmployeeInfo.overallScore!=null" class="row">
+                    <div class="col-lg-12">
+                        <label class="text-bold text-primary">Self Appraisal Information</label>
+                    </div>
+                    <hr />
+                    <div ng-if="EmployeeInfo.overallScore!=null">
+                        <div class="col-lg-4 style-bold"><b>Overall Self Appraisal Score: </b></div>
+                        <div class="col-lg-8 style-text">{{EmployeeInfo.overallScore}}</div>
+                    </div>
+                    
+                    <div ng-if="EmployeeInfo.overallComment!=null">
+                        <div class="col-lg-4 style-bold"><b>Overall Comments: </b></div>
+                        <div class="col-lg-8 style-text">{{EmployeeInfo.overallComment}}</div>
+                    </div>
+                    
+                    <div ng-if="EmployeeInfo.totalScore!=null">
+                        <div class="col-lg-4 style-bold"><b>Total Score: </b></div>
+                        <div class="col-lg-8 style-text">{{EmployeeInfo.totalScore}}</div>
+                    </div>
+                    
+                    <div ng-if="EmployeeInfo.pdp!=null">
+                        <div class="col-lg-4 style-bold"><b>Personal Development Plan: </b></div>
+                        <div class="col-lg-8 style-text" style="white-space: pre-line !important;">{{EmployeeInfo.pdp}}</div>
+                    </div>
+                    
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-lg-12">
+                        <label class="text-bold text-primary">Objective Information</label>
+                    </div>
+                    <hr />
+                    <div class="col-lg-12">
+                        <div ng-repeat="objective in EmployeeObjectives">
+                            <div class="row" style="border:1px solid black !important; margin: 5px !important; padding:5px !important;">
+                                <div class="col-lg-12 style-bold" style="color:forestgreen !important"><b>Objective {{$index+1}}</b></div>
+                                <hr />
+                                <div class="col-lg-4 style-bold"><b>Title: </b></div>
+                                <div class="col-lg-8 style-text">{{objective.title}}</div>
+                                <div class="col-lg-4 style-bold"><b>KPI: </b></div>
+                                <div class="col-lg-8 style-text">{{objective.kpi}}</div>
+                                <div class="col-lg-4 style-bold"><b>Target: </b></div>
+                                <div class="col-lg-8 style-text">{{objective.target}}</div>
+                                <div class="col-lg-4 style-bold"><b>Weight: </b></div>
+                                <div class="col-lg-8 style-text">{{objective.weight}}</div>
+                                <div ng-if="objective.selfAppraisal!=null">
+                                    <div class="col-lg-4 style-bold"><b>Self Appraisal: </b></div>
+                                    <div class="col-lg-8 style-text">{{objective.selfAppraisal}}</div>
+                                </div>
+                                <div ng-if="objective.comments!=null">
+                                    <div class="col-lg-4 style-bold"><b>Comments: </b></div>
+                                    <div class="col-lg-8 style-text" style="white-space: pre-line !important;">{{objective.comments}}</div>
+                                </div>
+                                <div ng-if="objective.evidenceFile!=null">
+                                    <div class="col-lg-4 style-bold"><b>Evidence File: </b></div>
+                                    <div class="col-lg-8 style-text" ng-if="objective.evidenceFile!=null"><a href="{{objective.evidenceFile}}" class="btn btn-info">View Evidence File</a></div>
+                                    <div class="col-lg-8 style-text" ng-if="objective.evidenceFile==null"> No file attach</div>
+                                </div>
+                                <div ng-if="objective.perfomenseAppraisal!=null">
+                                    <div class="col-lg-4 style-bold"><b>Performance Appraisal: </b></div>
+                                    <div class="col-lg-8 style-text">{{objective.perfomenseAppraisal}}</div>
+                                </div>
+                                <div class="col-lg-4 style-bold"><b>Objective Status: </b></div>
+                                <div class="col-lg-8 style-text" ng-if="isObjectiveApproved">Have Read</div>
+                                <div class="col-lg-8 style-text text-danger" ng-if="!isObjectiveApproved">Pending</div>
+                            </div>
+                            <br />
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" ng-click="$dismiss()"><i class="fa fa-check" aria-hidden="true"></i> Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+

@@ -1,0 +1,51 @@
+﻿<div tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" ng-click="$dismiss()" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Add Employee Numbers</h4>
+            </div>
+            <form name="numberData" ng-submit="storeEmployeeNumber(numberData.$invalid,newNumber)" novalidate>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label for="section" class="text-bold text-primary">Head of the Department</label>
+                                <input id="section" name="head" class="form-control" ng-model="newNumber.headOfDepartment" required />
+                                <div ng-messages="numberData.head.$error" ng-if="numberData.$submitted" class="text-danger">
+                                    <div ng-message="required">Department Head Name is required</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label for="sectionDepartment" class="text-bold text-primary">Department Name</label>
+                                <select id="sectionDepartment" name="DepartmentName" class="form-control" ng-model="newNumber.departmentName" ng-options="department.department as department.department for department in DepartmentList" required>
+                                    <option value="">Select Department</option>
+                                </select>
+                                <div ng-messages="numberData.DepartmentName.$error" ng-if="numberData.$submitted" class="text-danger">
+                                    <div ng-message="required">Please select a department name</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label for="section" class="text-bold text-primary">Number of Employee</label>
+                                <input id="section" type="number" name="numberEmployee" class="form-control" ng-model="newNumber.numberOfEmployees" min="0" max="99999" required />
+                                <div ng-messages="numberData.numberEmployee.$error" ng-if="numberData.$submitted" class="text-danger">
+                                    <div ng-message="required">Employee number is required</div>
+                                    <div ng-message="min">Number can not be less than 0</div>
+                                    <div ng-message="max">Number can not be greater than 99999</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" ng-click="$dismiss()"><i class="fa fa-times" aria-hidden="true"></i> Close</button>
+                    <button type="submit" ng-disabled="isProcessing" class="btn btn-primary"><i class="fa fa-plus-circle" aria-hidden="true"></i> {{addButton}}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
